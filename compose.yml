@@ -1,0 +1,12 @@
+services:
+  web:
+    image: ${IMAGE_NAME}
+    build: ./web/
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${WEB_PORT}:3000"
+    tty: true
+    volumes:
+      - type: bind
+        source: "./web/src/"
+        target: "/src/"
